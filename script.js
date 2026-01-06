@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let res;
     try {
-      res = await fetch("https://YOUR-BACKEND.onrender.com/chat", {
+      res = await fetch("https://study-helper-ai-1.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg })
