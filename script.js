@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const typing = addMessage("<em>AI is thinking…</em>", "bot", true);
 
     try {
-      const res = await fetch("https://study-helper-ai-2.onrender.com/chat", {
+      const res = await fetch("https://study-helper-ai-5.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg })
@@ -105,4 +105,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter") sendMessage();
   });
 });
+
 
