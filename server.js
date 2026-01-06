@@ -4,8 +4,6 @@ import dotenv from "dotenv";
 import fetch from "node-fetch";
 import path from "path";
 import { fileURLToPath } from "url";
-require("dotenv").config();
-
 
 dotenv.config();
 
@@ -13,6 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
@@ -23,8 +22,6 @@ app.get("/", (req, res) => {
 
 app.post("/chat", async (req, res) => {
   try {
-    console.log("Incoming message:", req.body);
-
     if (!process.env.OPENROUTER_API_KEY) {
       throw new Error("OPENROUTER_API_KEY missing");
     }
@@ -36,7 +33,7 @@ app.post("/chat", async (req, res) => {
       {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -47,7 +44,6 @@ app.post("/chat", async (req, res) => {
     );
 
     const data = await response.json();
-    console.log("OpenRouter response:", data);
 
     res.json({
       reply: data?.choices?.[0]?.message?.content || "No AI response"
@@ -63,7 +59,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
-
-
