@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import fetch from "node-fetch";
 import path from "path";
 import { fileURLToPath } from "url";
+require("dotenv").config();
+
 
 dotenv.config();
 
@@ -61,4 +63,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+const cors = require("cors");
+app.use(cors());
+
+
 
