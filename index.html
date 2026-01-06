@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Helper AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div>
+        <h1>Study Helper AI</h1>
+        <p>Learn • Revise • Test smarter</p>
+      </div>
+      <div class="badge">AI Tutor</div>
+    </header>
+
+    <section class="subjects">
+      <button class="active">General</button>
+      <button>DSA</button>
+      <button>Math</button>
+      <button>Coding</button>
+      <button>Exams</button>
+    </section>
+
+    <main id="chat" class="chat"></main>
+
+    <footer class="input-box">
+      <input id="input" placeholder="Ask anything you want to learn…" />
+      <button id="sendBtn">➤</button>
+      <button id="exportBtn" class="export-btn">📄 Export Notes</button>
+
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
